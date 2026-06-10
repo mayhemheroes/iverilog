@@ -1,0 +1,8 @@
+project: iverilog
+target: iverilog_parser_fuzzer
+testsuite:
+  - file:///mayhem/mayhem/testsuite/iverilog_parser_fuzzer
+cmds:
+  - cmd: /mayhem/iverilog_parser_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/iverilog_parser_fuzzer.dict

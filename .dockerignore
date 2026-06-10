@@ -1,0 +1,30 @@
+# .dockerignore for the commit-image build.
+# Goal: bake in the FULL repo (including .git history — the grader uses it),
+# dropping only local build artifacts and editor/OS cruft. Dev image, not minimal.
+
+# ── Build outputs / local cruft ──────────────────────────────────────────────
+# iverilog builds in-tree; keep stray local artifacts out of the context. build.sh
+# regenerates everything inside the image, so excluding these never breaks the build.
+*.o
+*.a
+*.so
+dep/
+autom4te.cache/
+config.log
+config.status
+config.h
+version_tag.h
+version_base.h
+/ivl
+/lexor.cc
+/lexor_keyword.cc
+/parse.cc
+/parse.h
+/parse.output
+/syn-rules.cc
+**/__pycache__/
+
+# ── Editor / OS noise ────────────────────────────────────────────────────────
+.DS_Store
+*.swp
+*~
